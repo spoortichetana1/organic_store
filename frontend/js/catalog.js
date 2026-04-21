@@ -1,0 +1,152 @@
+window.OrganicStoreCatalog = [
+  {
+    id: 'prod-001',
+    name: 'Organic Tomato',
+    price: 60,
+    category: 'Vegetables',
+    image: '../assets/products/organic-tomato.jpg',
+    stock: 40,
+    description: 'Fresh farm-grown tomatoes from Siribhoomi Farm.',
+    unit: 'kg'
+  },
+  {
+    id: 'prod-002',
+    name: 'Fresh Spinach',
+    price: 25,
+    category: 'Vegetables',
+    image: '../assets/products/fresh-spinach.jpg',
+    stock: 55,
+    description: 'Tender spinach bunches harvested the same day.',
+    unit: 'bunch'
+  },
+  {
+    id: 'prod-003',
+    name: 'Tender Carrot',
+    price: 70,
+    category: 'Vegetables',
+    image: '../assets/products/tender-carrot.jpg',
+    stock: 35,
+    description: 'Crunchy organic carrots with natural sweetness.',
+    unit: 'kg'
+  },
+  {
+    id: 'prod-004',
+    name: 'Sweet Mango',
+    price: 120,
+    category: 'Fruits',
+    image: '../assets/products/sweet-mango.jpg',
+    stock: 30,
+    description: 'Seasonal mangoes from the farm orchard.',
+    unit: 'kg'
+  },
+  {
+    id: 'prod-005',
+    name: 'Organic Banana',
+    price: 45,
+    category: 'Fruits',
+    image: '../assets/products/organic-banana.jpg',
+    stock: 60,
+    description: 'Naturally ripened bananas grown without chemicals.',
+    unit: 'dozen'
+  },
+  {
+    id: 'prod-006',
+    name: 'Red Apple',
+    price: 180,
+    category: 'Fruits',
+    image: '../assets/products/red-apple.jpg',
+    stock: 28,
+    description: 'Crisp red apples selected for everyday snacking.',
+    unit: 'kg'
+  },
+  {
+    id: 'prod-007',
+    name: 'Brown Rice',
+    price: 90,
+    category: 'Grains',
+    image: '../assets/products/brown-rice.jpg',
+    stock: 50,
+    description: 'Healthy unpolished brown rice in farm packs.',
+    unit: 'kg'
+  },
+  {
+    id: 'prod-008',
+    name: 'Whole Wheat Flour',
+    price: 55,
+    category: 'Grains',
+    image: '../assets/products/whole-wheat-flour.jpg',
+    stock: 45,
+    description: 'Stone-ground flour for daily home cooking.',
+    unit: 'kg'
+  },
+  {
+    id: 'prod-009',
+    name: 'Cow Milk',
+    price: 32,
+    category: 'Dairy',
+    image: '../assets/products/cow-milk.jpg',
+    stock: 70,
+    description: 'Fresh dairy milk sourced from the farm every morning.',
+    unit: 'liter'
+  },
+  {
+    id: 'prod-010',
+    name: 'Raw Honey',
+    price: 250,
+    category: 'Pantry',
+    image: '../assets/products/raw-honey.jpg',
+    stock: 22,
+    description: 'Pure raw honey collected and bottled in small batches.',
+    unit: '250g jar'
+  },
+  {
+    id: 'prod-011',
+    name: 'Organic Cucumber',
+    price: 35,
+    category: 'Vegetables',
+    image: '../assets/products/organic-cucumber.jpg',
+    stock: 48,
+    description: 'Crisp cucumbers for salads and quick meals.',
+    unit: 'kg'
+  },
+  {
+    id: 'prod-012',
+    name: 'Farm Cauliflower',
+    price: 58,
+    category: 'Vegetables',
+    image: '../assets/products/farm-cauliflower.jpg',
+    stock: 33,
+    description: 'Fresh cauliflower heads harvested from the farm.',
+    unit: 'piece'
+  },
+  {
+    id: 'prod-013',
+    name: 'Free Range Eggs',
+    price: 84,
+    category: 'Dairy',
+    image: '../assets/products/free-range-eggs.jpg',
+    stock: 64,
+    description: 'Farm-fresh eggs for breakfast and baking.',
+    unit: 'dozen'
+  },
+  {
+    id: 'prod-014',
+    name: 'Ripe Avocado',
+    price: 140,
+    category: 'Fruits',
+    image: '../assets/products/ripe-avocado.jpg',
+    stock: 26,
+    description: 'Creamy avocados for salads, toast, and dips.',
+    unit: 'kg'
+  },
+  {
+    id: 'prod-015',
+    name: 'Fresh Herbs Mix',
+    price: 22,
+    category: 'Pantry',
+    image: '../assets/products/fresh-herbs-mix.jpg',
+    stock: 58,
+    description: 'A mixed bunch of fresh herbs for cooking and garnish.',
+    unit: 'bunch'
+  }
+];
