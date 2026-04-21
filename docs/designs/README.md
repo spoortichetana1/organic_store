@@ -19,10 +19,10 @@ Goals:
 
 ## Homepage Structure
 
-1. Safety-first hero with clear product transparency message
-2. Supporting cards that explain the redesign
-3. A short section on why the safety-first redesign matters
-4. Footer branding kept minimal
+1. Large Siribhoomi Farm hero with a short intro and clear CTA to products
+2. Colorful visual panel using a local background image
+3. Compact supporting cards that explain the buying flow
+4. Minimal footer branding
 
 ## Product Page Structure
 
@@ -30,6 +30,7 @@ Goals:
 - Responsive product grid
 - Real photo thumbnails per product
 - Quick add-to-cart action
+- Visible cart count chip on the page
 
 ## Product Image Strategy
 

@@ -14,6 +14,11 @@ function readCart() {
 function writeCart(cart) {
   localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cart));
   syncCartCounters();
+  window.dispatchEvent(new CustomEvent('organic-store-cart-updated', {
+    detail: {
+      count: calculateItemCount(cart)
+    }
+  }));
 }
 
 function normalizeQuantity(value) {

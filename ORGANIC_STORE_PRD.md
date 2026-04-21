@@ -29,15 +29,16 @@ The storefront now emphasizes:
 ## 4. Current UI Structure
 
 ### Home Page
-- Hero focused on safety reform and product transparency
-- Supporting cards that explain why the redesign matters
-- Clear path into the product catalog and checkout flow
+- Large Siribhoomi Farm hero with a short farm overview
+- Colorful background panel and clear CTA into the catalog
+- Compact supporting cards that explain the buying flow
 
 ### Products Page
 - Category filter chips
 - Responsive product grid
 - Real product photography
 - Quick add-to-cart button on each card
+- Visible cart count chip on the page
 
 ### Cart Page
 - Quantity steppers

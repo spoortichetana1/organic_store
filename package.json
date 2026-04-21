@@ -2,7 +2,7 @@
   "name": "organic_store",
   "version": "1.0.0",
   "private": true,
-  "description": "Organic Store for Siribhoomi Farm",
+  "description": "Siribhoomi Farm and Organic Store",
   "main": "backend/server.js",
   "scripts": {
     "start": "node backend/server.js"

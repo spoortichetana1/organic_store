@@ -11,8 +11,21 @@ function getFiltersContainer() {
   return document.getElementById('category-filters');
 }
 
+function getCartCountNode() {
+  return document.querySelector('[data-products-cart-count]');
+}
+
 function formatPrice(price, unit) {
   return `${OrganicStoreCart.formatCurrency(price)} / ${unit}`;
+}
+
+function syncProductsCartCount() {
+  const node = getCartCountNode();
+  if (!node) {
+    return;
+  }
+
+  node.textContent = String(OrganicStoreCart.calculateItemCount());
 }
 
 function renderFilters(products) {
@@ -148,6 +161,7 @@ function bindProductsPage() {
 
       OrganicStoreCart.addToCart(product, 1);
       button.textContent = 'Added';
+      syncProductsCartCount();
       setTimeout(() => {
         button.textContent = 'Add to Cart';
       }, 900);
@@ -158,4 +172,8 @@ function bindProductsPage() {
 document.addEventListener('DOMContentLoaded', () => {
   bindProductsPage();
   loadProducts();
+  syncProductsCartCount();
+
+  window.addEventListener('organic-store-cart-updated', syncProductsCartCount);
+  window.addEventListener('storage', syncProductsCartCount);
 });

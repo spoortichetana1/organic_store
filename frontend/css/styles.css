@@ -236,6 +236,10 @@ textarea:focus-visible {
   overflow: hidden;
 }
 
+.hero-home .hero-card {
+  gap: 22px;
+}
+
 .hero-card::before {
   content: "";
   position: absolute;
@@ -282,6 +286,90 @@ textarea:focus-visible {
 .hero p {
   max-width: 56ch;
   font-size: 1.04rem;
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-home .hero h1 {
+  font-size: clamp(3rem, 6vw, 5.6rem);
+  max-width: 8ch;
+}
+
+.hero-visual {
+  display: flex;
+  justify-content: stretch;
+  align-items: stretch;
+  min-height: 100%;
+}
+
+.hero-visual-card {
+  width: 100%;
+  min-height: 100%;
+  padding: 28px;
+  border-radius: 28px;
+  color: #fff;
+  background:
+    linear-gradient(160deg, rgba(14, 52, 32, 0.15), rgba(12, 39, 24, 0.7)),
+    url("../../assets/products/fresh-herbs-mix.jpg") center/cover;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 14px;
+  min-height: 360px;
+}
+
+.hero-visual-card h2 {
+  margin: 0;
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  line-height: 1.02;
+  max-width: 9ch;
+}
+
+.hero-visual-card .muted {
+  color: rgba(255, 255, 255, 0.84);
+  max-width: 34ch;
+}
+
+.hero-chip {
+  align-self: flex-start;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+  font-size: 0.84rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  backdrop-filter: blur(10px);
+}
+
+.hero-mini-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.hero-mini-stat {
+  padding: 12px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.hero-mini-stat strong {
+  display: block;
+  font-size: 1.3rem;
+  margin-bottom: 2px;
+}
+
+.hero-mini-stat span {
+  font-size: 0.84rem;
+  opacity: 0.92;
 }
 
 .hero-actions,
@@ -422,6 +510,24 @@ textarea:focus-visible {
   max-width: 60ch;
 }
 
+.catalog-meta {
+  display: flex;
+  justify-content: flex-start;
+  margin: 18px 0 6px;
+}
+
+.catalog-count {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: linear-gradient(145deg, rgba(31, 107, 67, 0.1), rgba(184, 137, 43, 0.1));
+  border: 1px solid rgba(36, 58, 45, 0.08);
+  color: var(--primary-deep);
+  font-weight: 800;
+}
+
 .toolbar {
   display: flex;
   flex-wrap: wrap;
@@ -538,6 +644,12 @@ textarea:focus-visible {
 .grid-two {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
+  gap: 18px;
+}
+
+.grid-three {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
 }
 
@@ -693,6 +805,11 @@ textarea:focus-visible {
     grid-template-columns: 1fr;
   }
 
+  .grid-three,
+  .hero-mini-grid {
+    grid-template-columns: 1fr;
+  }
+
   .products-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -741,5 +858,14 @@ textarea:focus-visible {
 
   .button {
     width: 100%;
+  }
+
+  .catalog-meta {
+    justify-content: stretch;
+  }
+
+  .catalog-count {
+    width: 100%;
+    justify-content: center;
   }
 }

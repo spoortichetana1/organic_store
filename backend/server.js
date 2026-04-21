@@ -32,5 +32,5 @@ app.use((req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Organic Store server running at http://localhost:${PORT}`);
+  console.log(`Siribhoomi Farm and Organic Store server running at http://localhost:${PORT}`);
 });
