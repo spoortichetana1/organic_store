@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout | Organic Store</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">O</span>
+          <span class="brand-text">
+            Organic Store
+            <small>Siribhoomi Farm</small>
+          </span>
+        </a>
+        <nav class="nav">
+          <a href="index.html">Home</a>
+          <a href="products.html">Products</a>
+          <a href="cart.html">Cart (<span data-cart-count>0</span>)</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="section">
+        <div class="grid-two">
+          <div class="panel panel-pad">
+            <h1 class="section-title">Checkout</h1>
+            <p class="section-subtitle">Enter delivery details and place the order.</p>
+            <div id="checkout-error" class="notice" hidden></div>
+            <form id="checkout-form">
+              <div class="field-group">
+                <label for="customerName">Customer Name</label>
+                <input id="customerName" name="customerName" type="text" placeholder="Your name" required />
+              </div>
+              <div class="field-group">
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" type="tel" placeholder="10-digit phone number" required />
+              </div>
+              <div class="field-group">
+                <label for="address">Delivery Address</label>
+                <textarea id="address" name="address" placeholder="House number, street, city" required></textarea>
+              </div>
+              <div class="page-actions">
+                <a class="button button-secondary" href="cart.html">Back to Cart</a>
+                <button class="button button-primary" type="submit">Place Order</button>
+              </div>
+            </form>
+          </div>
+
+          <aside class="panel panel-pad">
+            <h2 class="section-title title-sm">Order Summary</h2>
+            <div id="checkout-summary"></div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="panel">
+          Orders are saved in data/orders.json on the backend
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/checkout.js"></script>
+  </body>
+</html>

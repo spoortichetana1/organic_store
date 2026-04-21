@@ -1,0 +1,102 @@
+[
+  {
+    "id": "prod-001",
+    "name": "Organic Tomato",
+    "price": 60,
+    "category": "Vegetables",
+    "image": "assets/products/vegetables.svg",
+    "stock": 40,
+    "description": "Fresh farm-grown tomatoes from Siribhoomi Farm.",
+    "unit": "kg"
+  },
+  {
+    "id": "prod-002",
+    "name": "Fresh Spinach",
+    "price": 25,
+    "category": "Vegetables",
+    "image": "assets/products/vegetables.svg",
+    "stock": 55,
+    "description": "Tender spinach bunches harvested the same day.",
+    "unit": "bunch"
+  },
+  {
+    "id": "prod-003",
+    "name": "Tender Carrot",
+    "price": 70,
+    "category": "Vegetables",
+    "image": "assets/products/vegetables.svg",
+    "stock": 35,
+    "description": "Crunchy organic carrots with natural sweetness.",
+    "unit": "kg"
+  },
+  {
+    "id": "prod-004",
+    "name": "Sweet Mango",
+    "price": 120,
+    "category": "Fruits",
+    "image": "assets/products/fruits.svg",
+    "stock": 30,
+    "description": "Seasonal mangoes from the farm orchard.",
+    "unit": "kg"
+  },
+  {
+    "id": "prod-005",
+    "name": "Organic Banana",
+    "price": 45,
+    "category": "Fruits",
+    "image": "assets/products/fruits.svg",
+    "stock": 60,
+    "description": "Naturally ripened bananas grown without chemicals.",
+    "unit": "dozen"
+  },
+  {
+    "id": "prod-006",
+    "name": "Red Apple",
+    "price": 180,
+    "category": "Fruits",
+    "image": "assets/products/fruits.svg",
+    "stock": 28,
+    "description": "Crisp red apples selected for everyday snacking.",
+    "unit": "kg"
+  },
+  {
+    "id": "prod-007",
+    "name": "Brown Rice",
+    "price": 90,
+    "category": "Grains",
+    "image": "assets/products/grains.svg",
+    "stock": 50,
+    "description": "Healthy unpolished brown rice in farm packs.",
+    "unit": "kg"
+  },
+  {
+    "id": "prod-008",
+    "name": "Whole Wheat Flour",
+    "price": 55,
+    "category": "Grains",
+    "image": "assets/products/grains.svg",
+    "stock": 45,
+    "description": "Stone-ground flour for daily home cooking.",
+    "unit": "kg"
+  },
+  {
+    "id": "prod-009",
+    "name": "Cow Milk",
+    "price": 32,
+    "category": "Dairy",
+    "image": "assets/products/dairy.svg",
+    "stock": 70,
+    "description": "Fresh dairy milk sourced from the farm every morning.",
+    "unit": "liter"
+  },
+  {
+    "id": "prod-010",
+    "name": "Raw Honey",
+    "price": 250,
+    "category": "Pantry",
+    "image": "assets/products/honey.svg",
+    "stock": 22,
+    "description": "Pure raw honey collected and bottled in small batches.",
+    "unit": "250g jar"
+  }
+]

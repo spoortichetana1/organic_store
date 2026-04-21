@@ -1,0 +1,10 @@
+<svg width="600" height="400" viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="400" rx="32" fill="#FFF1E8"/>
+  <circle cx="455" cy="92" r="58" fill="#FFD7B0"/>
+  <path d="M248 163C216 163 191 189 191 221C191 287 245 334 300 334C355 334 409 287 409 221C409 189 384 163 352 163C340 163 328 166 318 171C313 149 304 132 300 132C296 132 287 149 282 171C272 166 260 163 248 163Z" fill="#F05B4F"/>
+  <path d="M300 130C303 99 323 77 352 67" stroke="#2F6B2D" stroke-width="12" stroke-linecap="round"/>
+  <path d="M300 130C282 108 262 95 238 91" stroke="#2F6B2D" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="270" cy="220" r="8" fill="#FFD7B0"/>
+  <circle cx="330" cy="220" r="8" fill="#FFD7B0"/>
+  <text x="50%" y="362" text-anchor="middle" fill="#A84334" font-size="26" font-family="Arial, sans-serif">Farm Fresh Fruits</text>
+</svg>
