@@ -104,7 +104,7 @@ The storefront now emphasizes:
 
 ## 7. Product Catalog
 
-The current catalog contains 15 items across:
+The current catalog contains 21 items across:
 - Vegetables
 - Fruits
 - Grains
@@ -127,6 +127,12 @@ The product set now includes:
 - Free Range Eggs
 - Ripe Avocado
 - Fresh Herbs Mix
+- Farm Potato
+- Red Onion
+- Garlic Cloves
+- Lemon
+- Local Yogurt
+- Paneer
 
 ## 8. Implementation Notes
 

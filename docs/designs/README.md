@@ -65,5 +65,6 @@ Each product should have:
 
 - The products page falls back to local catalog data if the API is unavailable
 - The catalog image paths are local so the storefront still works when offline or when remote image hosts are unavailable
+- The catalog currently shows 21 products across vegetables, fruits, grains, dairy, and pantry
 - The checkout and success flows read from browser storage
 - The app uses relative paths so pages work both from the server and as local files

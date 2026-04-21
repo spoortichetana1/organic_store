@@ -148,5 +148,65 @@
     "stock": 58,
     "description": "A mixed bunch of fresh herbs for cooking and garnish.",
     "unit": "bunch"
+  },
+  {
+    "id": "prod-016",
+    "name": "Farm Potato",
+    "price": 30,
+    "category": "Vegetables",
+    "image": "../assets/products/farm-potato.jpg",
+    "stock": 72,
+    "description": "Fresh potatoes for curries, roasting, and home meals.",
+    "unit": "kg"
+  },
+  {
+    "id": "prod-017",
+    "name": "Red Onion",
+    "price": 40,
+    "category": "Vegetables",
+    "image": "../assets/products/red-onion.jpg",
+    "stock": 66,
+    "description": "Crisp red onions for everyday cooking and salads.",
+    "unit": "kg"
+  },
+  {
+    "id": "prod-018",
+    "name": "Garlic Cloves",
+    "price": 180,
+    "category": "Pantry",
+    "image": "../assets/products/garlic-cloves.jpg",
+    "stock": 34,
+    "description": "Fragrant garlic cloves packed for seasoning and cooking.",
+    "unit": "200g pack"
+  },
+  {
+    "id": "prod-019",
+    "name": "Lemon",
+    "price": 60,
+    "category": "Fruits",
+    "image": "../assets/products/lemon.jpg",
+    "stock": 52,
+    "description": "Bright lemons for drinks, dressings, and cooking.",
+    "unit": "kg"
+  },
+  {
+    "id": "prod-020",
+    "name": "Local Yogurt",
+    "price": 55,
+    "category": "Dairy",
+    "image": "../assets/products/local-yogurt.jpg",
+    "stock": 40,
+    "description": "Fresh yogurt made locally for meals and snacks.",
+    "unit": "cup"
+  },
+  {
+    "id": "prod-021",
+    "name": "Paneer",
+    "price": 160,
+    "category": "Dairy",
+    "image": "../assets/products/paneer.jpg",
+    "stock": 28,
+    "description": "Soft paneer blocks for simple home cooking.",
+    "unit": "200g pack"
   }
 ]
