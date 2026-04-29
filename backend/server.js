@@ -4,6 +4,7 @@ const path = require('path');
 
 const productsRouter = require('./routes/products');
 const ordersRouter = require('./routes/orders');
+const usersRouter = require('./routes/users');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -19,6 +20,7 @@ app.use('/assets', express.static(assetsDir));
 
 app.use('/products', productsRouter);
 app.use('/orders', ordersRouter);
+app.use('/users', usersRouter);
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(frontendDir, 'index.html'));
@@ -27,7 +29,27 @@ app.get('/', (req, res) => {
 app.use((req, res) => {
   res.status(404).json({
     success: false,
+    error: {
+      code: 'ROUTE_NOT_FOUND',
+      message: 'Route not found'
+    },
     message: 'Route not found'
+  });
+});
+
+app.use((error, req, res, next) => {
+  console.error('[server] Unhandled error', error);
+  if (res.headersSent) {
+    return next(error);
+  }
+
+  res.status(500).json({
+    success: false,
+    error: {
+      code: 'INTERNAL_SERVER_ERROR',
+      message: 'Internal server error'
+    },
+    message: 'Internal server error'
   });
 });
 

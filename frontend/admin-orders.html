@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Orders | Siribhoomi Farm and Organic Store</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">S</span>
+          <span class="brand-text">
+            Siribhoomi Farm
+            <small>Organic Store</small>
+          </span>
+        </a>
+        <nav class="nav">
+          <a href="index.html">Home</a>
+          <a href="products.html">Products</a>
+          <a href="admin-dashboard.html">Admin Home</a>
+          <a class="active" href="admin-orders.html">Orders</a>
+          <span data-owner-session-slot></span>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="section">
+        <div class="panel panel-pad">
+          <div class="eyebrow">Private section</div>
+          <h1 class="section-title">All orders</h1>
+          <p class="section-subtitle">
+            View every order in the system and update status or payment state.
+          </p>
+          <div class="catalog-meta">
+            <span class="catalog-count">Orders: <strong data-admin-order-count>0</strong></span>
+          </div>
+          <div id="admin-orders-empty" class="empty-state" hidden>
+            <h3>No orders found</h3>
+            <p class="muted">All submitted orders will appear here.</p>
+          </div>
+          <div id="admin-orders-list" class="orders-list"></div>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/session.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/owner-session.js"></script>
+    <script src="js/admin-orders.js"></script>
+  </body>
+</html>

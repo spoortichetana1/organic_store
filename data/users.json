@@ -1,0 +1,12 @@
+[
+  {
+    "id": "usr-owner-001",
+    "username": "owner",
+    "role": "owner",
+    "passwordHash": "eb9c875a9e7c19ca9f4527039551ca73e2dfd44309f7d00cb1390f26d910e1b562d684cb70197d8632a23c572f045847cd2625ed5494438e1a36882cb915e2fb",
+    "passwordSalt": "c6c67b767824f09bd01edbedc94c6b8d",
+    "passwordIterations": 100000,
+    "passwordAlgorithm": "sha512",
+    "createdAt": "2026-04-28T00:00:00.000Z"
+  }
+]

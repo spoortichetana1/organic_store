@@ -56,6 +56,11 @@ The storefront now emphasizes:
 - Order ID, items, total, and delivery address
 - Return-to-shop actions
 
+### Orders Page
+- Lists the logged-in user's past orders
+- Shows order ID, items, total, status, and date
+- Uses a simple card layout for quick scanning
+
 ## 5. Data Model
 
 ### Product
@@ -76,6 +81,8 @@ The storefront now emphasizes:
 ```json
 {
   "id": "ord-20260411-001",
+  "userId": "usr-123",
+  "username": "Anita",
   "customerName": "Anita Sharma",
   "phone": "9876543210",
   "address": "12 Green Street, Bangalore",
@@ -99,8 +106,22 @@ The storefront now emphasizes:
 - Frontend: HTML, CSS, JavaScript
 - Backend: Node.js + Express
 - Storage: JSON files
+- User accounts: file-backed user store with hashed passwords and a `role` field
+- Registration endpoint: `POST /users/register` with username/password validation
+- Login endpoint: `POST /users/login` with credential verification and role-aware responses
+- Orders include a user reference, status, and payment status, and validate the user before saving
+- Login state is kept in browser storage and can be cleared with logout
+- Owner or admin users can be identified through the stored role value
 - Product loading: backend API when available, local catalog fallback otherwise
 - Order placement: POST request to the backend, then render success state
+- Order retrieval: `GET /orders?userId=...` or `GET /orders?username=...` for a single user
+- Admin order retrieval: `GET /orders/admin?sort=recent` for all orders in the system
+- Admin order status update: `PATCH /orders/admin/:orderId/status` with `placed`, `confirmed`, or `delivered`
+- Admin payment status update: `PATCH /orders/admin/:orderId/payment-status` with `pending` or `paid`
+- The frontend includes a dedicated order-history page for logged-in users
+- The frontend includes a minimal admin dashboard showing total, pending, and delivered orders
+- The frontend includes a separate admin order manager page for owners
+- The admin dashboard reads from the admin orders API and stays intentionally minimal
 
 ## 7. Product Catalog
 
@@ -148,11 +169,22 @@ The product set now includes:
 - `frontend/products.html`
 - `frontend/cart.html`
 - `frontend/checkout.html`
+- `frontend/orders.html`
+- `frontend/login.html`
+- `frontend/owner-login.html`
+- `frontend/admin-dashboard.html`
+- `frontend/register.html`
 - `frontend/success.html`
 - `frontend/css/styles.css`
 - `frontend/js/api.js`
 - `frontend/js/cart.js`
 - `frontend/js/catalog.js`
+- `frontend/js/session.js`
+- `frontend/js/auth.js`
+- `frontend/js/owner-session.js`
+- `frontend/js/owner-auth.js`
+- `frontend/js/admin-dashboard.js`
+- `frontend/js/orders.js`
 - `frontend/js/products.js`
 - `frontend/js/checkout.js`
 - `frontend/js/success.js`

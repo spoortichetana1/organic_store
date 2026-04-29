@@ -67,7 +67,14 @@ async function handleCheckoutSubmit(event) {
     return;
   }
 
+  const currentUser = window.OrganicStoreSession.requireLogin();
+  if (!currentUser) {
+    return;
+  }
+
   const payload = {
+    userId: String(currentUser.id).trim(),
+    username: String(currentUser.username).trim(),
     customerName: form.customerName.value.trim(),
     phone: form.phone.value.trim(),
     address: form.address.value.trim(),
@@ -85,6 +92,14 @@ async function handleCheckoutSubmit(event) {
   if (!payload.customerName || !payload.phone || !payload.address) {
     if (errorNode) {
       errorNode.textContent = 'Please fill in all checkout fields.';
+      errorNode.hidden = false;
+    }
+    return;
+  }
+
+  if (!payload.userId && !payload.username) {
+    if (errorNode) {
+      errorNode.textContent = 'Please log in before placing an order.';
       errorNode.hidden = false;
     }
     return;

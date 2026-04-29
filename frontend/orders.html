@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Order Success | Siribhoomi Farm and Organic Store</title>
+    <title>Your Orders | Siribhoomi Farm and Organic Store</title>
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
@@ -19,7 +19,7 @@
         <nav class="nav">
           <a href="index.html">Home</a>
           <a href="products.html">Products</a>
-          <a href="orders.html">Orders</a>
+          <a class="active" href="orders.html">Orders</a>
           <span data-session-slot></span>
           <a href="cart.html">Cart (<span data-cart-count>0</span>)</a>
         </nav>
@@ -27,19 +27,33 @@
     </header>
 
     <main class="container">
-      <section class="section" id="success-content"></section>
+      <section class="section">
+        <div class="panel panel-pad">
+          <h1 class="section-title">Your Orders</h1>
+          <p class="section-subtitle">View past orders placed from your logged-in account.</p>
+          <div id="orders-empty" class="empty-state" hidden>
+            <h3>No orders yet</h3>
+            <p class="muted">When you place an order, it will appear here.</p>
+            <div class="page-actions actions-center">
+              <a class="button button-primary" href="products.html">Browse Products</a>
+            </div>
+          </div>
+          <div id="orders-list" class="orders-list"></div>
+        </div>
+      </section>
     </main>
 
     <footer class="footer">
       <div class="container">
         <div class="panel">
-          Thank you for ordering from Siribhoomi Farm
+          Orders are shown only for the signed-in user
         </div>
       </div>
     </footer>
 
+    <script src="js/api.js"></script>
     <script src="js/session.js"></script>
     <script src="js/cart.js"></script>
-    <script src="js/success.js"></script>
+    <script src="js/orders.js"></script>
   </body>
 </html>

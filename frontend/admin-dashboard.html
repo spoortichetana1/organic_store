@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard | Siribhoomi Farm and Organic Store</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">S</span>
+          <span class="brand-text">
+            Siribhoomi Farm
+            <small>Organic Store</small>
+          </span>
+        </a>
+        <nav class="nav">
+          <a href="index.html">Home</a>
+          <a href="products.html">Products</a>
+          <a href="orders.html">Orders</a>
+          <a class="active" href="admin-dashboard.html">Admin</a>
+          <a href="admin-orders.html">Manage Orders</a>
+          <span data-owner-session-slot></span>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="section">
+        <div class="panel panel-pad">
+          <div class="eyebrow">Private section</div>
+          <h1 class="section-title">Admin dashboard</h1>
+          <p class="section-subtitle">Quick view of order activity for the owner account.</p>
+
+          <div class="grid-three">
+            <div class="mini-card metric-card">
+              <strong>Total orders</strong>
+              <span class="metric-number" data-metric-total>0</span>
+            </div>
+            <div class="mini-card metric-card">
+              <strong>Pending orders</strong>
+              <span class="metric-number" data-metric-pending>0</span>
+            </div>
+            <div class="mini-card metric-card">
+              <strong>Delivered orders</strong>
+              <span class="metric-number" data-metric-delivered>0</span>
+            </div>
+          </div>
+
+          <div class="page-actions mt-18">
+            <a class="button button-primary" href="admin-orders.html">Manage Orders</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/owner-session.js"></script>
+    <script src="js/admin-dashboard.js"></script>
+  </body>
+</html>

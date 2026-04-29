@@ -32,6 +32,12 @@ Goals:
 - Quick add-to-cart action
 - Visible cart count chip on the page
 
+## Orders Page Structure
+
+- Logged-in user order history
+- Clean card layout for order ID, items, total, status, and date
+- Mobile-friendly stacking of order details
+
 ## Product Image Strategy
 
 The product catalog now uses locally stored images from `assets/products/` rather than remote image URLs.
@@ -45,6 +51,23 @@ Each product should have:
 ## Data And Layout Notes
 
 - Product data is stored in `data/products.json`
+- User data is stored in `data/users.json`
+- User registration uses `POST /users/register`
+- User login uses `POST /users/login` and returns the stored role
+- Order creation requires a valid logged-in user reference
+- Order records now carry both order status and payment status
+- Order listing supports filtering by `userId` or `username`
+- Admin order listing uses `GET /orders/admin` and returns all orders, sorted newest first by default
+- Admin order status updates use `PATCH /orders/admin/:orderId/status`
+- Admin payment status updates use `PATCH /orders/admin/:orderId/payment-status`
+- Session state is stored in browser storage and the header swaps to a logout control when signed in
+- Owner or admin users are distinguished by the `role` field in the session object
+- The frontend includes `frontend/orders.html` and `frontend/js/orders.js` for order history
+- Owner access uses separate pages: `frontend/owner-login.html` and `frontend/admin-dashboard.html`
+- Order management is handled by `frontend/admin-orders.html` and `frontend/js/admin-orders.js`
+- The admin dashboard shows total, pending, and delivered order counts using a minimal card layout
+- The admin dashboard pulls its counts from the admin orders API and avoids extra controls
+- The owner session is stored separately from the customer session to keep the UI split cleanly
 - The browser fallback catalog mirrors the same product list in `frontend/js/catalog.js`
 - Cart and order state remain lightweight and file-backed
 - Inline page styling was replaced with reusable classes wherever possible
