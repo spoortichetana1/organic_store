@@ -1,3 +1,6 @@
+const MIN_REGISTER_PASSWORD_LENGTH = 8;
+const MAX_REGISTER_PASSWORD_LENGTH = 128;
+
 function getQueryValue(name) {
   const params = new URLSearchParams(window.location.search);
   return params.get(name);
@@ -19,6 +22,29 @@ function handleAlreadyLoggedIn() {
   if (user && mainLink) {
     mainLink.textContent = `Continue as ${user.username}`;
   }
+}
+
+function validateRegistrationInput(username, password) {
+  const cleanUsername = String(username || '').trim();
+  const cleanPassword = String(password || '');
+
+  if (!cleanUsername) {
+    return 'Please enter a username.';
+  }
+
+  if (!cleanPassword) {
+    return 'Please enter a password.';
+  }
+
+  if (cleanPassword.length < MIN_REGISTER_PASSWORD_LENGTH) {
+    return `Password must be at least ${MIN_REGISTER_PASSWORD_LENGTH} characters.`;
+  }
+
+  if (cleanPassword.length > MAX_REGISTER_PASSWORD_LENGTH) {
+    return `Password must be at most ${MAX_REGISTER_PASSWORD_LENGTH} characters.`;
+  }
+
+  return null;
 }
 
 function bindLoginForm() {
@@ -81,8 +107,9 @@ function bindRegisterForm() {
     const username = form.username.value.trim();
     const password = form.password.value;
 
-    if (!username || !password) {
-      showMessage(messageNode, 'Please enter a username and password.', 'error');
+    const validationError = validateRegistrationInput(username, password);
+    if (validationError) {
+      showMessage(messageNode, validationError, 'error');
       return;
     }
 

@@ -9,10 +9,12 @@ const {
   sanitizeUser,
   normalizeRole
 } = require('../utils/userStore');
+const { sendMethodNotAllowed } = require('../utils/http');
 
 const router = express.Router();
 
 function sendError(res, status, code, message, details) {
+  console.warn(`[users] ${code} ${status} ${message}`);
   return res.status(status).json({
     success: false,
     error: {
@@ -26,7 +28,9 @@ function sendError(res, status, code, message, details) {
 
 router.get('/', async (req, res) => {
   try {
+    console.log('[users] GET / begin');
     const users = await readUsers();
+    console.log(`[users] GET / loaded ${users.length} users`);
     res.json({
       success: true,
       data: users.map(sanitizeUser)
@@ -37,8 +41,9 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/:username', async (req, res) => {
+router.get('/:username((?!register$|login$)[^/]+)', async (req, res) => {
   try {
+    console.log(`[users] GET /${req.params.username} begin`);
     const user = await findUserByUsername(req.params.username);
     if (!user) {
       return sendError(res, 404, 'USER_NOT_FOUND', 'User not found');
@@ -57,12 +62,26 @@ router.get('/:username', async (req, res) => {
 async function handleRegister(req, res) {
   try {
     const { username, password } = req.body || {};
+    console.log('[users] registration endpoint hit', {
+      method: req.method,
+      path: req.originalUrl
+    });
+    console.log('[users] POST /register begin', {
+      username: String(username || '').trim(),
+      passwordLength: String(password || '').length
+    });
     const validationError = validateRegistrationInput({ username, password });
     if (validationError) {
+      console.warn('[users] POST /register validation failed', validationError);
       return sendError(res, 400, 'VALIDATION_ERROR', validationError);
     }
 
     const user = await createUser({ username, password });
+    console.log('[users] POST /register success', {
+      userId: user.id,
+      username: user.username,
+      role: user.role
+    });
 
     return res.status(201).json({
       success: true,
@@ -88,13 +107,20 @@ async function handleRegister(req, res) {
 async function handleLogin(req, res) {
   try {
     const { username, password } = req.body || {};
+    console.log('[users] POST /login begin', {
+      username: String(username || '').trim()
+    });
     const validationError = validateLoginInput({ username, password });
     if (validationError) {
+      console.warn('[users] POST /login validation failed', validationError);
       return sendError(res, 400, 'VALIDATION_ERROR', validationError);
     }
 
     const user = await findUserByUsername(username);
     if (!user || !verifyPassword(password, user)) {
+      console.warn('[users] POST /login invalid credentials', {
+        username: String(username || '').trim()
+      });
       return sendError(res, 401, 'INVALID_CREDENTIALS', 'Invalid username or password');
     }
 
@@ -119,6 +145,9 @@ async function handleLogin(req, res) {
 
 router.post('/register', handleRegister);
 router.post('/login', handleLogin);
-router.post('/', handleRegister);
+
+router.all('/login', (req, res) => sendMethodNotAllowed(res, ['POST'], 'Method not allowed', '/auth/login'));
+router.all('/:username', (req, res) => sendMethodNotAllowed(res, ['GET'], 'Method not allowed', '/auth/:username'));
+router.all('/', (req, res) => sendMethodNotAllowed(res, ['GET', 'POST'], 'Method not allowed', '/auth'));
 
 module.exports = router;

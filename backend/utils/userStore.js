@@ -120,11 +120,16 @@ function verifyPassword(password, user) {
 }
 
 async function readUsers() {
-  return readJson(usersFile, []);
+  const users = await readJson(usersFile, []);
+  return Array.isArray(users) ? users : [];
 }
 
 async function writeUsers(users) {
-  return writeJson(usersFile, users);
+  const success = await writeJson(usersFile, users);
+  if (!success) {
+    throw new Error('failed to write users file');
+  }
+  return true;
 }
 
 async function findUserByUsername(username) {

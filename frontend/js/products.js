@@ -15,6 +15,10 @@ function getCartCountNode() {
   return document.querySelector('[data-products-cart-count]');
 }
 
+function getNoticeNode() {
+  return document.getElementById('products-notice');
+}
+
 function formatPrice(price, unit) {
   return `${OrganicStoreCart.formatCurrency(price)} / ${unit}`;
 }
@@ -26,6 +30,28 @@ function syncProductsCartCount() {
   }
 
   node.textContent = String(OrganicStoreCart.calculateItemCount());
+}
+
+function showNotice(message, kind = 'info') {
+  const node = getNoticeNode();
+  if (!node) {
+    return;
+  }
+
+  node.hidden = false;
+  node.dataset.kind = kind;
+  node.textContent = message;
+}
+
+function clearNotice() {
+  const node = getNoticeNode();
+  if (!node) {
+    return;
+  }
+
+  node.hidden = true;
+  node.textContent = '';
+  delete node.dataset.kind;
 }
 
 function renderFilters(products) {
@@ -119,9 +145,21 @@ async function loadProducts() {
   try {
     const response = await OrganicStoreAPI.getProducts();
     state.products = response.data || [];
+    if (response.fallback) {
+      showNotice(response.warning || 'The live product feed is unavailable right now. Showing the local catalog instead.', 'info');
+    } else {
+      clearNotice();
+    }
+    if (response.fallback) {
+      renderFilters(state.products);
+      renderProducts();
+      return;
+    }
+    clearNotice();
     renderFilters(state.products);
     renderProducts();
   } catch (error) {
+    showNotice(error.message || 'Unable to load products right now.', 'error');
     container.innerHTML = `
       <div class="panel panel-pad empty-state">
         <h3>Unable to load products</h3>
