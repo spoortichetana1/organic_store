@@ -41,8 +41,12 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/:username((?!register$|login$)[^/]+)', async (req, res) => {
+router.get('/:username', async (req, res) => {
   try {
+    if (['register', 'login'].includes(String(req.params.username || '').trim().toLowerCase())) {
+      return sendMethodNotAllowed(res, ['POST'], 'Method not allowed', `/auth/${req.params.username}`);
+    }
+
     console.log(`[users] GET /${req.params.username} begin`);
     const user = await findUserByUsername(req.params.username);
     if (!user) {

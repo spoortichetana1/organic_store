@@ -82,6 +82,7 @@ function renderSessionSlot() {
   }
 
   const user = getCurrentUser();
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
   if (user) {
     const roleLabel = getRoleLabel(user);
     slot.innerHTML = `
@@ -92,8 +93,8 @@ function renderSessionSlot() {
   }
 
   slot.innerHTML = `
-    <a class="session-link" href="login.html">Log In</a>
-    <a class="session-link" href="register.html">Register</a>
+    <a class="session-link ${currentPage === 'login.html' ? 'active' : ''}" href="login.html">Log In</a>
+    <a class="session-link ${currentPage === 'register.html' ? 'active' : ''}" href="register.html">Register</a>
   `;
 }
 

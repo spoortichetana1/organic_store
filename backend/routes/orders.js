@@ -25,19 +25,12 @@ function toPositiveInteger(value) {
   return parsed;
 }
 
-function sortOrders(orders, sort) {
-  const direction = String(sort || 'recent').trim().toLowerCase();
-  const sortedOrders = [...orders].sort((left, right) => {
+function sortOrdersByNewest(orders) {
+  return [...orders].sort((left, right) => {
     const leftTime = new Date(left.timestamp || 0).getTime();
     const rightTime = new Date(right.timestamp || 0).getTime();
-    return leftTime - rightTime;
+    return rightTime - leftTime;
   });
-
-  if (direction === 'oldest') {
-    return sortedOrders;
-  }
-
-  return sortedOrders.reverse();
 }
 
 function normalizeOrderStatus(status) {
@@ -71,7 +64,11 @@ function normalizeOrder(order) {
 }
 
 async function requirePrivilegedUser(req, res) {
-  const { userId, username } = req.body || req.query || {};
+  const identity = {
+    ...(req.query || {}),
+    ...(req.body || {})
+  };
+  const { userId, username } = identity;
   if (!userId && !username) {
     console.warn('[orders] privileged access missing user identity');
     res.status(400).json({
@@ -133,7 +130,7 @@ router.get('/', async (req, res) => {
         });
       }
 
-      const filteredOrders = orders.filter((order) => order.userId === user.id);
+      const filteredOrders = sortOrdersByNewest(orders.filter((order) => order.userId === user.id));
       return res.json({
         success: true,
         data: filteredOrders
@@ -142,7 +139,7 @@ router.get('/', async (req, res) => {
 
     res.json({
       success: true,
-      data: orders
+      data: sortOrdersByNewest(orders)
     });
   } catch (error) {
     console.error('[orders] GET / failed', error);
@@ -162,7 +159,7 @@ router.get('/admin', async (req, res) => {
 
     const orders = (await readJson(ordersFile, [])).map(normalizeOrder);
     console.log(`[orders] GET /admin loaded ${orders.length} orders`);
-    const sortedOrders = sortOrders(orders, req.query && req.query.sort);
+    const sortedOrders = sortOrdersByNewest(orders);
 
     res.json({
       success: true,

@@ -1,1 +1,237 @@
-[]
+[
+  {
+    "id": "ord-20260504-001",
+    "userId": "usr-cb2876c1-8660-4880-b53f-5a58f8798c60",
+    "username": "Spoo",
+    "customerName": "Chethan Puttegowda",
+    "phone": "09900874771",
+    "address": "Aqua 1001, Unicca Emporis,\nMadhura Nagar, Varthur",
+    "items": [
+      {
+        "productId": "prod-004",
+        "name": "Sweet Mango",
+        "price": 120,
+        "unit": "kg",
+        "quantity": 2,
+        "lineTotal": 240
+      },
+      {
+        "productId": "prod-001",
+        "name": "Organic Tomato",
+        "price": 60,
+        "unit": "kg",
+        "quantity": 1,
+        "lineTotal": 60
+      },
+      {
+        "productId": "prod-002",
+        "name": "Fresh Spinach",
+        "price": 25,
+        "unit": "bunch",
+        "quantity": 1,
+        "lineTotal": 25
+      }
+    ],
+    "total": 325,
+    "timestamp": "2026-05-04T14:59:48.335Z",
+    "status": "placed",
+    "paymentStatus": "pending",
+    "updatedAt": "2026-05-04T15:23:16.724Z"
+  },
+  {
+    "id": "ord-20260504-002",
+    "userId": "usr-cb2876c1-8660-4880-b53f-5a58f8798c60",
+    "username": "Spoo",
+    "customerName": "Spoorti Chetana",
+    "phone": "09972822331",
+    "address": "Aqua 1001, Unicca Emporis,\nMadhura Nagar, Varthur",
+    "items": [
+      {
+        "productId": "prod-003",
+        "name": "Tender Carrot",
+        "price": 70,
+        "unit": "kg",
+        "quantity": 1,
+        "lineTotal": 70
+      }
+    ],
+    "total": 70,
+    "timestamp": "2026-05-04T15:01:42.545Z",
+    "status": "placed",
+    "paymentStatus": "pending"
+  },
+  {
+    "id": "ord-20260504-003",
+    "userId": "usr-cb2876c1-8660-4880-b53f-5a58f8798c60",
+    "username": "Spoo",
+    "customerName": "Chethan Puttegowda",
+    "phone": "09900874771",
+    "address": "Aqua 1001, Unicca Emporis,\nMadhura Nagar, Varthur",
+    "items": [
+      {
+        "productId": "prod-005",
+        "name": "Organic Banana",
+        "price": 45,
+        "unit": "dozen",
+        "quantity": 2,
+        "lineTotal": 90
+      }
+    ],
+    "total": 90,
+    "timestamp": "2026-05-04T15:09:57.825Z",
+    "status": "placed",
+    "paymentStatus": "pending"
+  },
+  {
+    "id": "ord-20260504-004",
+    "userId": "usr-cb2876c1-8660-4880-b53f-5a58f8798c60",
+    "username": "Spoo",
+    "customerName": "Spoorti Chetana",
+    "phone": "09972822331",
+    "address": "Aqua 1001, Unicca Emporis,\nMadhura Nagar, Varthur",
+    "items": [
+      {
+        "productId": "prod-001",
+        "name": "Organic Tomato",
+        "price": 60,
+        "unit": "kg",
+        "quantity": 2,
+        "lineTotal": 120
+      },
+      {
+        "productId": "prod-003",
+        "name": "Tender Carrot",
+        "price": 70,
+        "unit": "kg",
+        "quantity": 1,
+        "lineTotal": 70
+      },
+      {
+        "productId": "prod-013",
+        "name": "Free Range Eggs",
+        "price": 84,
+        "unit": "dozen",
+        "quantity": 1,
+        "lineTotal": 84
+      }
+    ],
+    "total": 274,
+    "timestamp": "2026-05-04T15:16:32.341Z",
+    "status": "placed",
+    "paymentStatus": "pending"
+  },
+  {
+    "id": "ord-20260504-005",
+    "userId": "usr-4286771b-6f81-4322-8a90-31ff0b7af37a",
+    "username": "chethanp11",
+    "customerName": "Chethan Puttegowda",
+    "phone": "09900874771",
+    "address": "Aqua 1001, Unicca Emporis,\nMadhura Nagar, Varthur",
+    "items": [
+      {
+        "productId": "prod-001",
+        "name": "Organic Tomato",
+        "price": 60,
+        "unit": "kg",
+        "quantity": 2,
+        "lineTotal": 120
+      },
+      {
+        "productId": "prod-003",
+        "name": "Tender Carrot",
+        "price": 70,
+        "unit": "kg",
+        "quantity": 1,
+        "lineTotal": 70
+      },
+      {
+        "productId": "prod-013",
+        "name": "Free Range Eggs",
+        "price": 84,
+        "unit": "dozen",
+        "quantity": 1,
+        "lineTotal": 84
+      }
+    ],
+    "total": 274,
+    "timestamp": "2026-05-04T15:17:25.409Z",
+    "status": "delivered",
+    "paymentStatus": "paid",
+    "updatedAt": "2026-05-04T15:25:22.194Z"
+  },
+  {
+    "id": "ord-20260504-006",
+    "userId": "usr-4286771b-6f81-4322-8a90-31ff0b7af37a",
+    "username": "chethanp11",
+    "customerName": "Chethan Puttegowda",
+    "phone": "09900874771",
+    "address": "Aqua 1001, Unicca Emporis,\nMadhura Nagar, Varthur",
+    "items": [
+      {
+        "productId": "prod-013",
+        "name": "Free Range Eggs",
+        "price": 84,
+        "unit": "dozen",
+        "quantity": 1,
+        "lineTotal": 84
+      },
+      {
+        "productId": "prod-008",
+        "name": "Whole Wheat Flour",
+        "price": 55,
+        "unit": "kg",
+        "quantity": 1,
+        "lineTotal": 55
+      }
+    ],
+    "total": 139,
+    "timestamp": "2026-05-04T15:17:58.988Z",
+    "status": "delivered",
+    "paymentStatus": "paid",
+    "updatedAt": "2026-05-04T15:24:15.560Z"
+  },
+  {
+    "id": "ord-20260504-007",
+    "userId": "usr-cb2876c1-8660-4880-b53f-5a58f8798c60",
+    "username": "Spoo",
+    "customerName": "Spoorti Chetana",
+    "phone": "09972822331",
+    "address": "Aqua 1001, Unicca Emporis,\nMadhura Nagar, Varthur",
+    "items": [
+      {
+        "productId": "prod-006",
+        "name": "Red Apple",
+        "price": 180,
+        "unit": "kg",
+        "quantity": 1,
+        "lineTotal": 180
+      }
+    ],
+    "total": 180,
+    "timestamp": "2026-05-04T15:29:14.391Z",
+    "status": "placed",
+    "paymentStatus": "pending"
+  },
+  {
+    "id": "ord-20260504-008",
+    "userId": "usr-4286771b-6f81-4322-8a90-31ff0b7af37a",
+    "username": "chethanp11",
+    "customerName": "Chethan Puttegowda",
+    "phone": "09900874771",
+    "address": "Aqua 1001, Unicca Emporis,\nMadhura Nagar, Varthur",
+    "items": [
+      {
+        "productId": "prod-009",
+        "name": "Cow Milk",
+        "price": 32,
+        "unit": "liter",
+        "quantity": 1,
+        "lineTotal": 32
+      }
+    ],
+    "total": 32,
+    "timestamp": "2026-05-04T15:31:54.346Z",
+    "status": "placed",
+    "paymentStatus": "pending"
+  }
+]

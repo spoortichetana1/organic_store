@@ -5,7 +5,7 @@
     "price": 60,
     "category": "Vegetables",
     "image": "../assets/products/organic-tomato.jpg",
-    "stock": 40,
+    "stock": 35,
     "description": "Fresh farm-grown tomatoes from Siribhoomi Farm.",
     "unit": "kg"
   },
@@ -15,7 +15,7 @@
     "price": 25,
     "category": "Vegetables",
     "image": "../assets/products/fresh-spinach.jpg",
-    "stock": 55,
+    "stock": 54,
     "description": "Tender spinach bunches harvested the same day.",
     "unit": "bunch"
   },
@@ -25,7 +25,7 @@
     "price": 70,
     "category": "Vegetables",
     "image": "../assets/products/tender-carrot.jpg",
-    "stock": 35,
+    "stock": 32,
     "description": "Crunchy organic carrots with natural sweetness.",
     "unit": "kg"
   },
@@ -35,7 +35,7 @@
     "price": 120,
     "category": "Fruits",
     "image": "../assets/products/sweet-mango.jpg",
-    "stock": 30,
+    "stock": 28,
     "description": "Seasonal mangoes from the farm orchard.",
     "unit": "kg"
   },
@@ -45,7 +45,7 @@
     "price": 45,
     "category": "Fruits",
     "image": "../assets/products/organic-banana.jpg",
-    "stock": 60,
+    "stock": 58,
     "description": "Naturally ripened bananas grown without chemicals.",
     "unit": "dozen"
   },
@@ -55,7 +55,7 @@
     "price": 180,
     "category": "Fruits",
     "image": "../assets/products/red-apple.jpg",
-    "stock": 28,
+    "stock": 27,
     "description": "Crisp red apples selected for everyday snacking.",
     "unit": "kg"
   },
@@ -75,7 +75,7 @@
     "price": 55,
     "category": "Grains",
     "image": "../assets/products/whole-wheat-flour.jpg",
-    "stock": 45,
+    "stock": 44,
     "description": "Stone-ground flour for daily home cooking.",
     "unit": "kg"
   },
@@ -85,7 +85,7 @@
     "price": 32,
     "category": "Dairy",
     "image": "../assets/products/cow-milk.jpg",
-    "stock": 70,
+    "stock": 69,
     "description": "Fresh dairy milk sourced from the farm every morning.",
     "unit": "liter"
   },
@@ -125,7 +125,7 @@
     "price": 84,
     "category": "Dairy",
     "image": "../assets/products/free-range-eggs.jpg",
-    "stock": 64,
+    "stock": 61,
     "description": "Farm-fresh eggs for breakfast and baking.",
     "unit": "dozen"
   },

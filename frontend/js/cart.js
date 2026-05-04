@@ -69,7 +69,13 @@ function removeCartItem(productId) {
 }
 
 function clearCart() {
-  writeCart([]);
+  localStorage.removeItem(CART_STORAGE_KEY);
+  syncCartCounters();
+  window.dispatchEvent(new CustomEvent('organic-store-cart-updated', {
+    detail: {
+      count: 0
+    }
+  }));
 }
 
 function calculateCartTotal(cart = readCart()) {

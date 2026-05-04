@@ -13,11 +13,13 @@ function renderSuccess() {
     return;
   }
 
+  OrganicStoreCart.clearCart();
+
   const order = readLastOrder();
   if (!order) {
     container.innerHTML = `
       <div class="panel panel-pad success-state">
-        <h1>Order placed</h1>
+        <h1>Order placed successfully</h1>
         <p class="muted">No order summary is available in this session.</p>
         <div class="page-actions actions-center">
           <a class="button button-primary" href="products.html">Browse Products</a>
@@ -31,8 +33,8 @@ function renderSuccess() {
   container.innerHTML = `
     <div class="panel panel-pad success-state">
       <div class="eyebrow actions-center">Order Confirmed</div>
-      <h1>Thank you, ${order.customerName}</h1>
-      <p class="muted">Your order has been placed with Siribhoomi Farm.</p>
+      <h1>Order placed successfully</h1>
+      <p class="muted">Thank you, ${order.customerName}. Your order has been placed with Siribhoomi Farm.</p>
 
       <div class="panel panel-pad mt-20 text-left">
         <div class="summary-row"><strong>Order ID</strong><span>${order.id}</span></div>

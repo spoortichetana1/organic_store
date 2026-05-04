@@ -20,6 +20,7 @@
           <a href="index.html">Home</a>
           <a href="products.html">Products</a>
           <a href="orders.html">Orders</a>
+          <a href="owner-login.html">Owner Corner</a>
           <span data-session-slot></span>
           <a href="cart.html">Cart (<span data-cart-count>0</span>)</a>
         </nav>
@@ -49,7 +50,7 @@
 
           <div class="auth-panel panel panel-pad">
             <div id="auth-message" class="notice" hidden></div>
-            <form id="register-form" class="auth-form" method="post" action="/api/customers/register">
+            <form id="register-form" class="auth-form">
               <div class="field-group">
                 <label for="register-username">Username</label>
                 <input id="register-username" name="username" type="text" autocomplete="username" required />

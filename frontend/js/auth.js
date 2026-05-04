@@ -120,10 +120,10 @@ function bindRegisterForm() {
 
     try {
       await OrganicStoreAPI.registerUser({ username, password });
-      showMessage(messageNode, 'Account created. Redirecting to login...', 'success');
+      showMessage(messageNode, 'Registration successful. Redirecting to login...', 'success');
       window.setTimeout(() => {
         window.location.href = `login.html?registered=1&username=${encodeURIComponent(username)}`;
-      }, 700);
+      }, 1500);
     } catch (error) {
       showMessage(messageNode, error.message, 'error');
       submitButton.disabled = false;

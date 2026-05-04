@@ -33,14 +33,24 @@ async function readJson(filePath, defaultValue) {
 }
 
 async function writeJson(filePath, data) {
-  const tempFilePath = `${filePath}.tmp`;
+  const tempFilePath = `${filePath}.${process.pid}.${Date.now()}.tmp`;
   try {
     await ensureParentDirectory(filePath);
     logFileOperation('write', filePath, {
       entries: Array.isArray(data) ? data.length : Object.keys(data || {}).length
     });
     await fs.writeFile(tempFilePath, JSON.stringify(data, null, 2), 'utf8');
-    await fs.rename(tempFilePath, filePath);
+    try {
+      await fs.rename(tempFilePath, filePath);
+    } catch (renameError) {
+      console.warn(`[fileStore] rename failed, falling back to copy ${filePath}`, renameError);
+      await fs.copyFile(tempFilePath, filePath);
+      try {
+        await fs.rm(tempFilePath, { force: true });
+      } catch (cleanupError) {
+        console.warn(`[fileStore] temp cleanup failed ${tempFilePath}`, cleanupError);
+      }
+    }
     console.log(`[fileStore] write success ${filePath}`);
     return true;
   } catch (error) {

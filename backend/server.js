@@ -10,6 +10,7 @@ const { sendApiError } = require('./utils/http');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+const HOST = process.env.HOST || '0.0.0.0';
 const rootDir = path.join(__dirname, '..');
 const frontendDir = path.join(rootDir, 'frontend');
 const assetsDir = path.join(rootDir, 'assets');
@@ -59,6 +60,9 @@ app.use((error, req, res, next) => {
   sendApiError(res, 500, 'INTERNAL_SERVER_ERROR', 'Internal server error');
 });
 
-app.listen(PORT, () => {
-  console.log(`Siribhoomi Farm and Organic Store server running at http://localhost:${PORT}`);
+app.listen(PORT, HOST, () => {
+  const displayHost = HOST === '0.0.0.0' ? 'localhost' : HOST;
+  console.log(
+    `Siribhoomi Farm and Organic Store server running at http://${displayHost}:${PORT}`
+  );
 });
