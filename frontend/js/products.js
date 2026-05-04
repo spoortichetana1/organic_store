@@ -23,6 +23,28 @@ function formatPrice(price, unit) {
   return `${OrganicStoreCart.formatCurrency(price)} / ${unit}`;
 }
 
+function getStockStatus(stock) {
+  const quantity = Number(stock);
+  if (!Number.isFinite(quantity) || quantity <= 0) {
+    return 'out-of-stock';
+  }
+  if (quantity <= 10) {
+    return 'low-stock';
+  }
+  return 'available';
+}
+
+function getStockLabel(stock) {
+  const status = getStockStatus(stock);
+  if (status === 'out-of-stock') {
+    return 'Out of stock';
+  }
+  if (status === 'low-stock') {
+    return `Low stock: ${stock}`;
+  }
+  return `Stock: ${stock}`;
+}
+
 function syncProductsCartCount() {
   const node = getCartCountNode();
   if (!node) {
@@ -103,13 +125,13 @@ function renderProducts() {
           <div class="product-body">
             <div class="product-title-row">
               <h3>${product.name}</h3>
-              <span class="badge">${product.category}</span>
+              <span class="status-badge" data-status="category">${product.category}</span>
             </div>
             <div class="price">${formatPrice(product.price, product.unit)}</div>
             <p class="muted">${product.description}</p>
             <div class="summary-row">
-              <span class="badge">Stock: ${product.stock}</span>
-              <span class="muted">Unit: ${product.unit}</span>
+              <span class="status-badge" data-status="${getStockStatus(product.stock)}">${getStockLabel(product.stock)}</span>
+              <span class="status-badge" data-status="unit">Unit: ${product.unit}</span>
             </div>
             <div class="card-actions">
               <button type="button" class="button button-primary" data-action="add-to-cart" data-product-id="${product.id}">

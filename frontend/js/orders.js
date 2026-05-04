@@ -10,6 +10,27 @@ function formatOrderDate(timestamp) {
   });
 }
 
+function normalizeStatus(value, fallback) {
+  return String(value || fallback).trim().toLowerCase();
+}
+
+function formatStatusLabel(value) {
+  return String(value || '')
+    .trim()
+    .replace(/-/g, ' ')
+    .replace(/\b\w/g, (letter) => letter.toUpperCase());
+}
+
+function renderStatusBadge(status) {
+  const normalizedStatus = normalizeStatus(status, 'placed');
+  return `<span class="status-badge" data-status="${normalizedStatus}">${formatStatusLabel(normalizedStatus)}</span>`;
+}
+
+function renderPaymentBadge(paymentStatus) {
+  const normalizedStatus = normalizeStatus(paymentStatus, 'pending');
+  return `<span class="status-badge" data-status="${normalizedStatus}">${formatStatusLabel(normalizedStatus)}</span>`;
+}
+
 function getOrdersContainer() {
   return document.getElementById('orders-list');
 }
@@ -65,15 +86,17 @@ function renderOrders(orders) {
             </div>
             <div class="order-meta">
               <strong>${OrganicStoreCart.formatCurrency(order.total || 0)}</strong>
-              <span class="badge">${formatOrderDate(order.timestamp)}</span>
+              <span class="status-badge" data-status="date">${formatOrderDate(order.timestamp)}</span>
             </div>
           </div>
           <div class="order-grid">
             <div class="order-section">
-              <strong>Status</strong>
-              <p class="muted">${order.status || 'placed'}</p>
-              <strong>Payment</strong>
-              <p class="muted">${order.paymentStatus || 'pending'}</p>
+              <div class="status-pair">
+                <strong>Order status</strong>
+                ${renderStatusBadge(order.status)}
+                <strong>Payment status</strong>
+                ${renderPaymentBadge(order.paymentStatus)}
+              </div>
             </div>
             <div class="order-section">
               <strong>Items</strong>

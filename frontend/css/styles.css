@@ -16,6 +16,16 @@
   --muted: #5d685f;
   --border: rgba(36, 58, 45, 0.12);
   --border-strong: rgba(36, 58, 45, 0.2);
+  --status-info-bg: #e9f1ff;
+  --status-info-text: #24508f;
+  --status-warning-bg: #fff3cf;
+  --status-warning-text: #7a5511;
+  --status-success-bg: #dff3e4;
+  --status-success-text: #185b35;
+  --status-neutral-bg: #eef1ed;
+  --status-neutral-text: #46524a;
+  --status-danger-bg: #ffe5e2;
+  --status-danger-text: #8a3228;
   --shadow-lg: 0 28px 70px rgba(18, 32, 22, 0.12);
   --shadow-md: 0 16px 38px rgba(18, 32, 22, 0.1);
   --shadow-sm: 0 8px 18px rgba(18, 32, 22, 0.08);
@@ -84,7 +94,7 @@ h2,
 h3,
 .section-title {
   font-family: "Fraunces", Georgia, serif;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
 }
 
 p {
@@ -131,7 +141,7 @@ textarea:focus-visible {
 }
 
 .container {
-  width: min(1180px, calc(100% - 32px));
+  width: min(1440px, calc(100% - 48px));
   margin: 0 auto;
 }
 
@@ -157,7 +167,7 @@ textarea:focus-visible {
   align-items: center;
   gap: 14px;
   font-weight: 800;
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
 }
 
 .brand-mark {
@@ -222,7 +232,7 @@ textarea:focus-visible {
 
 .hero-card {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-columns: minmax(0, 1.25fr) minmax(420px, 0.75fr);
   gap: 24px;
   align-items: center;
   padding: clamp(24px, 3vw, 36px);
@@ -274,7 +284,7 @@ textarea:focus-visible {
 
 .hero h1 {
   font-size: clamp(2.5rem, 4.8vw, 4.4rem);
-  max-width: 11ch;
+  max-width: 14ch;
 }
 
 .hero p,
@@ -284,7 +294,7 @@ textarea:focus-visible {
 }
 
 .hero p {
-  max-width: 56ch;
+  max-width: 72ch;
   font-size: 1.04rem;
 }
 
@@ -295,7 +305,7 @@ textarea:focus-visible {
 
 .hero-home .hero h1 {
   font-size: clamp(3rem, 6vw, 5.6rem);
-  max-width: 8ch;
+  max-width: 12ch;
 }
 
 .hero-visual {
@@ -326,12 +336,12 @@ textarea:focus-visible {
   margin: 0;
   font-size: clamp(2rem, 3vw, 2.8rem);
   line-height: 1.02;
-  max-width: 9ch;
+  max-width: 16ch;
 }
 
 .hero-visual-card .muted {
   color: rgba(255, 255, 255, 0.84);
-  max-width: 34ch;
+  max-width: 48ch;
 }
 
 .hero-chip {
@@ -349,7 +359,7 @@ textarea:focus-visible {
 
 .hero-mini-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
   gap: 10px;
 }
 
@@ -390,7 +400,7 @@ textarea:focus-visible {
   padding: 12px 18px;
   min-height: 46px;
   font-weight: 800;
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
   cursor: pointer;
   box-shadow: none;
 }
@@ -507,7 +517,7 @@ textarea:focus-visible {
 }
 
 .section-subtitle {
-  max-width: 60ch;
+  max-width: 82ch;
 }
 
 .auth-shell {
@@ -601,7 +611,7 @@ textarea:focus-visible {
 
 .order-grid {
   display: grid;
-  grid-template-columns: 0.35fr 0.65fr;
+  grid-template-columns: minmax(240px, 0.35fr) minmax(0, 0.65fr);
   gap: 16px;
 }
 
@@ -744,7 +754,7 @@ textarea:focus-visible {
 
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 18px;
 }
 
@@ -791,6 +801,7 @@ textarea:focus-visible {
   align-items: flex-start;
   justify-content: space-between;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
 .product-title-row h3 {
@@ -809,6 +820,73 @@ textarea:focus-visible {
   font-size: 0.82rem;
   font-weight: 800;
   white-space: nowrap;
+  max-width: 100%;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 900;
+  line-height: 1.1;
+  text-transform: uppercase;
+  white-space: nowrap;
+  border: 1px solid transparent;
+  max-width: 100%;
+  text-align: center;
+}
+
+.status-badge[data-status="placed"] {
+  background: var(--status-info-bg);
+  color: var(--status-info-text);
+  border-color: rgba(36, 80, 143, 0.14);
+}
+
+.status-badge[data-status="confirmed"] {
+  background: var(--status-warning-bg);
+  color: var(--status-warning-text);
+  border-color: rgba(122, 85, 17, 0.16);
+}
+
+.status-badge[data-status="delivered"],
+.status-badge[data-status="paid"],
+.status-badge[data-status="available"] {
+  background: var(--status-success-bg);
+  color: var(--status-success-text);
+  border-color: rgba(24, 91, 53, 0.16);
+}
+
+.status-badge[data-status="pending"],
+.status-badge[data-status="date"],
+.status-badge[data-status="category"],
+.status-badge[data-status="unit"] {
+  background: var(--status-neutral-bg);
+  color: var(--status-neutral-text);
+  border-color: rgba(70, 82, 74, 0.12);
+}
+
+.status-badge[data-status="low-stock"] {
+  background: var(--status-warning-bg);
+  color: var(--status-warning-text);
+  border-color: rgba(122, 85, 17, 0.16);
+}
+
+.status-badge[data-status="out-of-stock"] {
+  background: var(--status-danger-bg);
+  color: var(--status-danger-text);
+  border-color: rgba(138, 50, 40, 0.16);
+}
+
+.status-pair {
+  display: grid;
+  gap: 8px;
+}
+
+.status-pair strong {
+  margin: 0;
 }
 
 .price {
@@ -829,13 +907,13 @@ textarea:focus-visible {
 
 .grid-two {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.75fr);
   gap: 18px;
 }
 
 .grid-three {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 18px;
 }
 
@@ -874,7 +952,7 @@ textarea:focus-visible {
 
 .cart-item {
   display: grid;
-  grid-template-columns: 104px minmax(0, 1fr) auto;
+  grid-template-columns: 104px minmax(0, 1fr) minmax(120px, auto);
   gap: 16px;
   padding: 16px;
   border: 1px solid rgba(36, 58, 45, 0.08);
@@ -910,6 +988,27 @@ textarea:focus-visible {
   border-radius: 14px;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.95);
+}
+
+.panel,
+.product-card,
+.order-card,
+.cart-item,
+.summary-row,
+.order-item-row {
+  min-width: 0;
+}
+
+.panel,
+.product-card,
+.order-card,
+.cart-item,
+.order-section,
+.summary-row,
+.order-item-row,
+.muted,
+.section-subtitle {
+  overflow-wrap: anywhere;
 }
 
 .stepper button {
@@ -1038,8 +1137,7 @@ textarea:focus-visible {
     grid-template-columns: 1fr;
   }
 
-  .grid-three,
-  .hero-mini-grid {
+  .grid-three {
     grid-template-columns: 1fr;
   }
 
@@ -1054,7 +1152,7 @@ textarea:focus-visible {
 
 @media (max-width: 640px) {
   .container {
-    width: min(100% - 20px, 1180px);
+    width: min(100% - 20px, 1440px);
   }
 
   .header-inner {

@@ -7,6 +7,17 @@ function readLastOrder() {
   }
 }
 
+function normalizeStatus(value, fallback) {
+  return String(value || fallback).trim().toLowerCase();
+}
+
+function formatStatusLabel(value) {
+  return String(value || '')
+    .trim()
+    .replace(/-/g, ' ')
+    .replace(/\b\w/g, (letter) => letter.toUpperCase());
+}
+
 function renderSuccess() {
   const container = document.getElementById('success-content');
   if (!container) {
@@ -40,7 +51,10 @@ function renderSuccess() {
         <div class="summary-row"><strong>Order ID</strong><span>${order.id}</span></div>
         <div class="summary-row"><strong>Phone</strong><span>${order.phone}</span></div>
         <div class="summary-row"><strong>Total</strong><span>${OrganicStoreCart.formatCurrency(order.total)}</span></div>
-        <div class="summary-row"><strong>Status</strong><span>${order.status}</span></div>
+        <div class="summary-row">
+          <strong>Status</strong>
+          <span class="status-badge" data-status="${normalizeStatus(order.status, 'placed')}">${formatStatusLabel(normalizeStatus(order.status, 'placed'))}</span>
+        </div>
         <div class="mt-12">
           <strong>Delivery Address</strong>
           <p class="muted">${order.address}</p>

@@ -233,5 +233,94 @@
     "timestamp": "2026-05-04T15:31:54.346Z",
     "status": "placed",
     "paymentStatus": "pending"
+  },
+  {
+    "id": "ord-20260504-009",
+    "userId": "usr-4286771b-6f81-4322-8a90-31ff0b7af37a",
+    "username": "chethanp11",
+    "customerName": "Chethan Puttegowda",
+    "phone": "09900874771",
+    "address": "Aqua 1001, Unicca Emporis,\nMadhura Nagar, Varthur",
+    "items": [
+      {
+        "productId": "prod-002",
+        "name": "Fresh Spinach",
+        "price": 25,
+        "unit": "bunch",
+        "quantity": 1,
+        "lineTotal": 25
+      }
+    ],
+    "total": 25,
+    "timestamp": "2026-05-04T15:41:14.906Z",
+    "status": "placed",
+    "paymentStatus": "pending"
+  },
+  {
+    "id": "ord-20260504-010",
+    "userId": "usr-4286771b-6f81-4322-8a90-31ff0b7af37a",
+    "username": "chethanp11",
+    "customerName": "Chethan Puttegowda",
+    "phone": "09900874771",
+    "address": "Aqua 1001, Unicca Emporis,\nMadhura Nagar, Varthur",
+    "items": [
+      {
+        "productId": "prod-001",
+        "name": "Organic Tomato",
+        "price": 60,
+        "unit": "kg",
+        "quantity": 1,
+        "lineTotal": 60
+      }
+    ],
+    "total": 60,
+    "timestamp": "2026-05-04T15:44:55.348Z",
+    "status": "placed",
+    "paymentStatus": "pending"
+  },
+  {
+    "id": "ord-20260504-011",
+    "userId": "usr-4286771b-6f81-4322-8a90-31ff0b7af37a",
+    "username": "chethanp11",
+    "customerName": "Chethan Puttegowda",
+    "phone": "09900874771",
+    "address": "Aqua 1001, Unicca Emporis,\nMadhura Nagar, Varthur",
+    "items": [
+      {
+        "productId": "prod-007",
+        "name": "Brown Rice",
+        "price": 90,
+        "unit": "kg",
+        "quantity": 1,
+        "lineTotal": 90
+      }
+    ],
+    "total": 90,
+    "timestamp": "2026-05-04T15:47:18.241Z",
+    "status": "placed",
+    "paymentStatus": "pending"
+  },
+  {
+    "id": "ord-20260504-012",
+    "userId": "usr-cb2876c1-8660-4880-b53f-5a58f8798c60",
+    "username": "Spoo",
+    "customerName": "Spoorti Chetana",
+    "phone": "09972822331",
+    "address": "Aqua 1001, Unicca Emporis,\nMadhura Nagar, Varthur",
+    "items": [
+      {
+        "productId": "prod-001",
+        "name": "Organic Tomato",
+        "price": 60,
+        "unit": "kg",
+        "quantity": 1,
+        "lineTotal": 60
+      }
+    ],
+    "total": 60,
+    "timestamp": "2026-05-04T15:51:26.290Z",
+    "status": "delivered",
+    "paymentStatus": "paid",
+    "updatedAt": "2026-05-04T15:52:25.452Z"
   }
 ]

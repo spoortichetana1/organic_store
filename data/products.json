@@ -5,7 +5,7 @@
     "price": 60,
     "category": "Vegetables",
     "image": "../assets/products/organic-tomato.jpg",
-    "stock": 35,
+    "stock": 33,
     "description": "Fresh farm-grown tomatoes from Siribhoomi Farm.",
     "unit": "kg"
   },
@@ -15,7 +15,7 @@
     "price": 25,
     "category": "Vegetables",
     "image": "../assets/products/fresh-spinach.jpg",
-    "stock": 54,
+    "stock": 53,
     "description": "Tender spinach bunches harvested the same day.",
     "unit": "bunch"
   },
@@ -65,7 +65,7 @@
     "price": 90,
     "category": "Grains",
     "image": "../assets/products/brown-rice.jpg",
-    "stock": 50,
+    "stock": 49,
     "description": "Healthy unpolished brown rice in farm packs.",
     "unit": "kg"
   },

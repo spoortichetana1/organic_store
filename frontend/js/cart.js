@@ -166,49 +166,60 @@ function renderCartPage() {
 
 function bindCartPage() {
   const list = document.getElementById('cart-list');
-  if (!list) {
-    return;
+  const checkoutButton = document.getElementById('checkout-button');
+
+  if (list) {
+    list.addEventListener('click', (event) => {
+      const item = event.target.closest('.cart-item');
+      if (!item) {
+        return;
+      }
+
+      const productId = item.dataset.productId;
+      const action = event.target.dataset.action;
+      const cart = readCart();
+      const current = cart.find((entry) => entry.productId === productId);
+      if (!current) {
+        return;
+      }
+
+      if (action === 'increase') {
+        updateCartItem(productId, current.quantity + 1);
+        renderCartPage();
+      } else if (action === 'decrease') {
+        updateCartItem(productId, Math.max(1, current.quantity - 1));
+        renderCartPage();
+      } else if (action === 'remove') {
+        removeCartItem(productId);
+        renderCartPage();
+      }
+    });
+
+    list.addEventListener('change', (event) => {
+      if (event.target.dataset.action !== 'quantity-input') {
+        return;
+      }
+
+      const item = event.target.closest('.cart-item');
+      if (!item) {
+        return;
+      }
+
+      updateCartItem(item.dataset.productId, event.target.value);
+      renderCartPage();
+    });
   }
 
-  list.addEventListener('click', (event) => {
-    const item = event.target.closest('.cart-item');
-    if (!item) {
-      return;
-    }
+  if (checkoutButton) {
+    checkoutButton.addEventListener('click', () => {
+      if (readCart().length === 0) {
+        return;
+      }
 
-    const productId = item.dataset.productId;
-    const action = event.target.dataset.action;
-    const cart = readCart();
-    const current = cart.find((entry) => entry.productId === productId);
-    if (!current) {
-      return;
-    }
-
-    if (action === 'increase') {
-      updateCartItem(productId, current.quantity + 1);
-      renderCartPage();
-    } else if (action === 'decrease') {
-      updateCartItem(productId, Math.max(1, current.quantity - 1));
-      renderCartPage();
-    } else if (action === 'remove') {
-      removeCartItem(productId);
-      renderCartPage();
-    }
-  });
-
-  list.addEventListener('change', (event) => {
-    if (event.target.dataset.action !== 'quantity-input') {
-      return;
-    }
-
-    const item = event.target.closest('.cart-item');
-    if (!item) {
-      return;
-    }
-
-    updateCartItem(item.dataset.productId, event.target.value);
-    renderCartPage();
-  });
+      const user = window.OrganicStoreSession && window.OrganicStoreSession.getCurrentUser();
+      window.location.href = user ? 'checkout.html' : 'login.html?returnUrl=checkout.html';
+    });
+  }
 }
 
 window.OrganicStoreCart = {

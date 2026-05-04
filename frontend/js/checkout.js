@@ -123,14 +123,14 @@ async function handleCheckoutSubmit(event) {
 
     OrganicStoreCart.clearCart();
     if (errorNode) {
-      errorNode.textContent = 'Order placed successfully. Redirecting to confirmation...';
+      errorNode.textContent = 'Order placed successfully. Redirecting to your orders...';
       errorNode.dataset.kind = 'success';
       errorNode.hidden = false;
     }
     submitButton.textContent = 'Order Placed';
     window.setTimeout(() => {
-      window.location.href = 'success.html';
-    }, 2000);
+      window.location.href = 'orders.html';
+    }, 1500);
   } catch (error) {
     if (errorNode) {
       errorNode.textContent = error.message;
