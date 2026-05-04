@@ -28,5 +28,15 @@
     "passwordIterations": 100000,
     "passwordAlgorithm": "sha512",
     "createdAt": "2026-05-04T15:02:37.352Z"
+  },
+  {
+    "id": "usr-fbf7d9d6-ed95-4e58-adc4-2ee9f7981744",
+    "username": "user",
+    "role": "user",
+    "passwordHash": "8db12a8cd60984d34c2108c79c6611b9667e92a082e107122777fe79667bcd75098521df618a0fa0d7d0683ca45915f809b06aa2578e3511f2ae5980de03b85f",
+    "passwordSalt": "41c1d148a48d67a79788e945b6242d26",
+    "passwordIterations": 100000,
+    "passwordAlgorithm": "sha512",
+    "createdAt": "2026-05-04T16:22:22.578Z"
   }
 ]

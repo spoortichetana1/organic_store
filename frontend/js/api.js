@@ -1,6 +1,8 @@
-// The frontend may be opened from a static dev server (for example 127.0.0.1:5500),
-// but the MVP backend always runs on port 3000.
+// GitHub Pages cannot read .env at runtime. Keep this value aligned with .env manually.
+// Local development backend:
 const API_BASE_URL = 'http://127.0.0.1:3000';
+// Production backend for GitHub Pages deployment:
+// const API_BASE_URL = 'https://organic-store-api.onrender.com';
 
 const API_ROUTES = {
   auth: {

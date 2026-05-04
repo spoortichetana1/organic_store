@@ -85,6 +85,24 @@ Open:
 http://127.0.0.1:3000/
 ```
 
+## Backend URL Configuration
+
+The project includes `.env` as the source note for the backend URL:
+
+```text
+API_BASE_URL=http://127.0.0.1:3000
+# API_BASE_URL=https://organic-store-api.onrender.com
+```
+
+Because GitHub Pages serves static files, it cannot read `.env` at runtime. Before deploying the frontend to GitHub Pages, update `frontend/js/api.js`:
+
+```js
+// const API_BASE_URL = 'http://127.0.0.1:3000';
+const API_BASE_URL = 'https://organic-store-api.onrender.com';
+```
+
+For local development, keep the local line active.
+
 ## Default Owner Login
 
 Use Owner Corner to open the owner login page.

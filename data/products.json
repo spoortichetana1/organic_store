@@ -75,7 +75,7 @@
     "price": 55,
     "category": "Grains",
     "image": "../assets/products/whole-wheat-flour.jpg",
-    "stock": 44,
+    "stock": 43,
     "description": "Stone-ground flour for daily home cooking.",
     "unit": "kg"
   },
