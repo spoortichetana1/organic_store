@@ -15,7 +15,7 @@
     "price": 25,
     "category": "Vegetables",
     "image": "../assets/products/fresh-spinach.jpg",
-    "stock": 53,
+    "stock": 52,
     "description": "Tender spinach bunches harvested the same day.",
     "unit": "bunch"
   },
@@ -25,7 +25,7 @@
     "price": 70,
     "category": "Vegetables",
     "image": "../assets/products/tender-carrot.jpg",
-    "stock": 32,
+    "stock": 31,
     "description": "Crunchy organic carrots with natural sweetness.",
     "unit": "kg"
   },
@@ -65,7 +65,7 @@
     "price": 90,
     "category": "Grains",
     "image": "../assets/products/brown-rice.jpg",
-    "stock": 49,
+    "stock": 48,
     "description": "Healthy unpolished brown rice in farm packs.",
     "unit": "kg"
   },

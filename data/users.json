@@ -38,5 +38,25 @@
     "passwordIterations": 100000,
     "passwordAlgorithm": "sha512",
     "createdAt": "2026-05-04T16:22:22.578Z"
+  },
+  {
+    "id": "usr-58cebf43-3c3c-44f8-93f2-137e3af61ea3",
+    "username": "user2",
+    "role": "user",
+    "passwordHash": "c1264898f53c5adf32d008c01d8de521975d727da557e88291a56a10cd27b7506ef01dd542b498f7dc97d0a2bce311323c53b51b23ea7741649733302521470d",
+    "passwordSalt": "fd489f649acbc407c2898d7269ddbf24",
+    "passwordIterations": 100000,
+    "passwordAlgorithm": "sha512",
+    "createdAt": "2026-05-04T17:29:35.750Z"
+  },
+  {
+    "id": "usr-7dbf4985-6eb9-4236-ab8c-8d2c74952150",
+    "username": "man",
+    "role": "user",
+    "passwordHash": "f254d51ac45ddba7912139909b222893639cea8570260b268e803f1604995d58d45ffcc8ba3324d535195e2dff6ba541e591387b5ec6feec99d228cc817109ca",
+    "passwordSalt": "ea6f57d0c1c347a14d6e66e6f07784d0",
+    "passwordIterations": 100000,
+    "passwordAlgorithm": "sha512",
+    "createdAt": "2026-05-05T03:10:29.816Z"
   }
 ]

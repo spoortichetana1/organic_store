@@ -24,9 +24,10 @@ function handleAlreadyLoggedIn() {
   }
 }
 
-function validateRegistrationInput(username, password) {
+function validateRegistrationInput(username, password, confirmPassword) {
   const cleanUsername = String(username || '').trim();
   const cleanPassword = String(password || '');
+  const cleanConfirmPassword = String(confirmPassword || '');
 
   if (!cleanUsername) {
     return 'Please enter a username.';
@@ -34,6 +35,14 @@ function validateRegistrationInput(username, password) {
 
   if (!cleanPassword) {
     return 'Please enter a password.';
+  }
+
+  if (!cleanConfirmPassword) {
+    return 'Please confirm your password.';
+  }
+
+  if (cleanPassword !== cleanConfirmPassword) {
+    return 'Passwords do not match.';
   }
 
   if (cleanPassword.length < MIN_REGISTER_PASSWORD_LENGTH) {
@@ -106,8 +115,9 @@ function bindRegisterForm() {
 
     const username = form.username.value.trim();
     const password = form.password.value;
+    const confirmPassword = form.confirmPassword.value;
 
-    const validationError = validateRegistrationInput(username, password);
+    const validationError = validateRegistrationInput(username, password, confirmPassword);
     if (validationError) {
       showMessage(messageNode, validationError, 'error');
       return;
