@@ -85,23 +85,83 @@ Open:
 http://127.0.0.1:3000/
 ```
 
-## Backend URL Configuration
-
-The project includes `.env` as the source note for the backend URL:
-
-```text
-API_BASE_URL=http://127.0.0.1:3000
-# API_BASE_URL=https://organic-store-api.onrender.com
-```
-
-Because GitHub Pages serves static files, it cannot read `.env` at runtime. Before deploying the frontend to GitHub Pages, update `frontend/js/api.js`:
+If you serve the `frontend/` folder separately, for example with VS Code Live Server on port `5500`, set `frontend/js/config.js` to:
 
 ```js
-// const API_BASE_URL = 'http://127.0.0.1:3000';
-const API_BASE_URL = 'https://organic-store-api.onrender.com';
+window.APP_CONFIG = {
+  API_BASE_URL: "http://localhost:3000"
+};
 ```
 
-For local development, keep the local line active.
+The backend allows local frontend origins `http://localhost:5500` and `http://127.0.0.1:5500` by default.
+
+## Frontend API Configuration
+
+GitHub Pages serves static files and cannot read `.env` at runtime. The frontend backend URL is controlled only by `frontend/js/config.js`.
+
+For local backend testing:
+
+```js
+window.APP_CONFIG = {
+  API_BASE_URL: "http://localhost:3000"
+};
+```
+
+For the Render backend:
+
+```js
+window.APP_CONFIG = {
+  API_BASE_URL: "https://organic-store-api.onrender.com"
+};
+```
+
+All frontend API calls go through `frontend/js/api.js`, which reads `window.APP_CONFIG.API_BASE_URL`.
+
+## Render Backend Deployment
+
+Create a Render Web Service for the repository.
+
+Use these settings:
+
+```text
+Build Command: npm install
+Start Command: npm start
+```
+
+Set Render environment variables:
+
+```text
+PORT=3000
+ALLOWED_ORIGINS=http://localhost:5500,http://127.0.0.1:5500,https://spoortichetana1.github.io
+```
+
+Render may provide its own `PORT`; the backend uses `process.env.PORT || 3000`.
+
+The live GitHub Pages site is `https://spoortichetana1.github.io/organic_store/frontend/index.html`, but CORS must use only the origin: `https://spoortichetana1.github.io`. If you use a custom domain later, add that exact origin too.
+
+The backend exposes a health check:
+
+```text
+GET /health
+```
+
+## GitHub Pages Frontend Deployment
+
+Before deploying to GitHub Pages, set `frontend/js/config.js` to the Render backend URL:
+
+```js
+window.APP_CONFIG = {
+  API_BASE_URL: "https://organic-store-api.onrender.com"
+};
+```
+
+Deploy the `frontend/` directory through GitHub Pages. The production URL is:
+
+```text
+https://spoortichetana1.github.io/organic_store/frontend/index.html
+```
+
+The deployed site should call Render through `config.js`; it should only call localhost when `config.js` is intentionally switched back for local testing.
 
 ## Default Owner Login
 

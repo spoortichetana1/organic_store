@@ -1,8 +1,4 @@
-// GitHub Pages cannot read .env at runtime. Keep this value aligned with .env manually.
-// Local development backend:
-const API_BASE_URL = 'http://127.0.0.1:3000';
-// Production backend for GitHub Pages deployment:
-// const API_BASE_URL = 'https://organic-store-api.onrender.com';
+const API_BASE_URL = window.APP_CONFIG.API_BASE_URL.replace(/\/$/, '');
 
 const API_ROUTES = {
   auth: {
