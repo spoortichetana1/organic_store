@@ -167,11 +167,6 @@ The deployed site should call Render through `config.js`; it should only call lo
 
 Use Owner Corner to open the owner login page.
 
-```text
-Username: owner
-Password: owner
-```
-
 ## Important API Routes
 
 - `GET /api/products`: product catalog
