@@ -111,7 +111,7 @@ For the Render backend:
 
 ```js
 window.APP_CONFIG = {
-  API_BASE_URL: "https://organic-store-api.onrender.com"
+  API_BASE_URL: "https://organic-store-kb76.onrender.com"
 };
 ```
 
@@ -151,7 +151,7 @@ Before deploying to GitHub Pages, set `frontend/js/config.js` to the Render back
 
 ```js
 window.APP_CONFIG = {
-  API_BASE_URL: "https://organic-store-api.onrender.com"
+  API_BASE_URL: "https://organic-store-kb76.onrender.com"
 };
 ```
 
